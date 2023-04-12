@@ -18,7 +18,7 @@ def format_args():
 
     reset_parser = sub_parsers.add_parser("reset", help="reset uploaded course/modules from the database and blob storage")
     reset_parser.add_argument("modules", help="Run the reset command for specific modules. Resets the rustici course upload by default", nargs="+")
-    reset_parser.add_argument("--zip-upload", dest="zip_upload", action=argparse.BooleanOptionalAction, help="Additionally resets the zip upload")
+    reset_parser.add_argument("--zip-upload", dest="zip_upload", action=argparse.BooleanOptionalAction, help="Additionally resets the zip upload", default=False)
     
     check_parser = sub_parsers.add_parser("check", help="Check the status of migrations")
     check_parser.add_argument("--modules", dest="modules", help="Run the check command for specific modules", nargs="+")
