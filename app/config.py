@@ -27,7 +27,7 @@ IDENTITY_URL=os.environ['IDENTITY_URL']
 TOKEN_USER=os.environ['TOKEN_USER']
 TOKEN_PASS=os.environ['TOKEN_PASS']
 
-__DATBASE_SERVER=os.environ['DATABASE_SERVER']
+__DATABASE_SERVER=os.environ['DATABASE_SERVER']
 __DATABASE_USER=os.environ['DATABASE_USER']
 __DATABASE_PASSWORD=os.environ['DATABASE_PASSWORD']
 __DATABASE=os.environ['DATABASE']
@@ -35,9 +35,9 @@ __DATABASE=os.environ['DATABASE']
 LOG_DB_TRANSACTIONS=os.getenv('LOG_DB_TRANSACTIONS', False)
 
 def get_database_connection():
-    if __DATBASE_SERVER and __DATABASE_USER and __DATABASE_PASSWORD and __DATABASE:
+    if __DATABASE_SERVER and __DATABASE_USER and __DATABASE_PASSWORD and __DATABASE:
         logger.info("Getting database credentials")
-        return f"mysql://{__DATABASE_USER}:{__DATABASE_PASSWORD}@{__DATBASE_SERVER}/{__DATABASE}?ssl=true"
+        return f"mysql://{__DATABASE_USER}:{__DATABASE_PASSWORD}@{__DATABASE_SERVER}/{__DATABASE}?ssl=true"
     else:
         logger.info("Getting database credentials for in-memory database")
         return "mysql:///:memory:"
