@@ -80,3 +80,10 @@ To check if the zip file for migration module ABCD is present in the blob storag
 ### setup
 
 The setup command will create the `migration` database table in the `migration_env` database. `<env>` is the environment provided by the environment variable `ENVIRONMENT`.
+
+## Tests
+
+To run the unit tests for this application (after installing `requirements.txt`):
+
+`cd app`
+`python -m pytest testing`
